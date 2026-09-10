@@ -1,0 +1,53 @@
+{
+  "api_base": "https://www.deribit.com/api/v2",
+  "target_days": [
+    30,
+    90,
+    180
+  ],
+  "max_distinct_strikes_per_expiry": 25,
+  "max_batch_seconds": 30,
+  "max_book_age_seconds": 30,
+  "max_reference_movement_fraction": 0.001,
+  "reference_sensitivity_fraction": 0.001,
+  "annual_continuous_rates": [
+    -0.02,
+    0.0,
+    0.05,
+    0.1
+  ],
+  "baseline_rate": 0.0,
+  "reference_defects": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "support_ceilings": [
+    2,
+    5,
+    20,
+    100,
+    1000
+  ],
+  "feasibility_tolerance": 1e-08,
+  "tight_spread_fraction_of_spot": 0.005,
+  "workers": 6,
+  "request_spacing_seconds": 0.1,
+  "request_timeout_seconds": 15,
+  "selection_rule": "For future collection, process targets in order within fixed horizon bands of 15-45, 60-120 and 150-210 days. Choose the nearest unused eligible expiry, ties earlier. Record unavailable targets without substitution and collect selected expiries chronologically. Screen on any nonnegative bid or positive ask in book summary. At most 25 distinct strikes per expiry, evenly spaced by sorted rank including endpoints; request both listed option types. Freeze before analysis. No liquidity or spread ranking. Each expiry is a separate timed batch.",
+  "conventions": "Conditional fee-exclusive, upfront USDC premium per BTC; use BTC-USDC index as S0 proxy and terminal 30-minute averaged delivery index as S_T. No dividends, deterministic discount D=exp(-r*T), ACT/365, mean restriction D E[S_T]<=S0. A: discounted expected put payoff. B: additional full-defect call convention, never inferred from margining. Rates and +/-0.1% reference grid are conditional scenarios, not estimated rates or confidence ranges.",
+  "horizon_bands_days": {
+    "30": [
+      15,
+      45
+    ],
+    "90": [
+      60,
+      120
+    ],
+    "180": [
+      150,
+      210
+    ]
+  }
+}

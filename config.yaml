@@ -1,0 +1,140 @@
+# =====================================================================
+# config.yaml
+# Central configuration for the BTC bubble-detection data pipeline.
+# Every methodological choice that affects the processed data or the
+# figures lives here, so it can be changed in one place and re-run.
+# =====================================================================
+
+# ----- Analysis window -----
+window:
+  # Spot price is available from earlier; funding rate only from the
+  # Sep 2019 contract launch. Set the plot and analysis windows
+  # independently where they differ.
+  price_start: "2014-01-01"     # earliest for the long-run price figure
+  funding_start: "2019-09-01"   # Binance BTCUSDT perpetual launch
+  analysis_start: "2019-09-01"  # window for joint price-plus-funding work
+  end: "present"                # resolved to today's date at runtime
+
+# ----- Data sources -----
+data:
+  spot_ticker: "BTC-USD"        # yfinance ticker
+  spot_frequency: "1d"          # daily; raise only for specific tests
+  perp_symbol: "BTCUSDT"        # Binance perpetual futures symbol
+  binance_funding_interval: "8h"
+
+  # Secondary cross-exchange sources for validation only.
+  aggregators:
+    coinglass: true
+    coinalyze: true
+    bybit_crosscheck: true
+
+# ----- Caching -----
+cache:
+  raw_dir: "data/raw"           # cached API pulls (gitignored)
+  processed_dir: "data/processed"
+  use_cache: true               # reuse cached raw pulls instead of re-fetching
+  refresh: false                # force re-fetch even if cache exists
+
+# ----- Funding-rate handling -----
+funding:
+  # How the 8-hourly funding series is collapsed to daily frequency
+  # when aligned with the daily price series.
+  # Options: "sum" | "mean" | "none" (keep 8-hourly, align price forward)
+  daily_aggregation: "sum"
+
+  # Rolling window for the smoothed funding line in the overlay figure.
+  rolling_window_days: 30
+
+  # Threshold (per 8-hour interval) above which the rolling mean is
+  # treated as a persistently elevated long-demand premium — an indirect
+  # short-friction signal, not a short-selling cost. 0.0003 = 0.03%.
+  elevated_threshold: 0.0003
+
+# ----- Short-selling cost proxy (direct): margin borrow rate -----
+# The perpetual funding rate above is only an *indirect* short-friction proxy
+# (it is the premium longs pay; a short is paid, not charged). The margin borrow
+# rate is the *direct* cost of borrowing BTC in order to short it. Source: the
+# Bitfinex public funding/lending market for BTC (fBTC). Unlike the 8-hourly
+# perpetual funding series this is a DAILY rate, and its history begins in
+# mid-2016 — so it also covers the 2017 cycle, which the Sep-2019 funding
+# window misses.
+borrow:
+  enabled: true
+  source: "bitfinex"
+  # Bitfinex v2 candle key. fBTC = BTC funding/lending market (cost to borrow
+  # BTC to short). "a30:p2:p30" = 30-day-aggregated Flash Return Rate, the
+  # standard reference series; rates are expressed per day.
+  bitfinex_candle: "trade:1D:fBTC:a30:p2:p30"
+  start: "2016-01-01"           # fBTC history begins mid-2016
+  # Borrow candles are already daily; if a day carries more than one record it
+  # is collapsed by this rule. Options: "mean" | "sum".
+  daily_aggregation: "mean"
+
+# ----- Cleaning -----
+cleaning:
+  # Liquidation-cascade spikes are flagged, not silently dropped.
+  # A funding observation is flagged as a spike if its absolute value
+  # exceeds spike_sigma standard deviations from a rolling baseline.
+  spike_sigma: 5.0
+  spike_baseline_window_days: 30
+  keep_raw_alongside_cleaned: true
+
+  # Price series gap-filling across weekends and holidays.
+  # Options: "ffill" | "interpolate" | "none"
+  price_gap_fill: "ffill"
+
+# ----- Returns -----
+returns:
+  # Options: "log" | "simple"
+  method: "log"
+
+# ----- Plots -----
+plots:
+  output_dir: "figures"
+  price_log_scale: true
+  # Reproduce the shaded-band overlay figure from the proposal.
+  shading_threshold: 0.0003     # matches funding.elevated_threshold
+  dpi: 200
+
+# ----- Phase IV: bubble-detection diagnostics -----
+# Formal explosive-root test (Phillips-Shi-Yu GSADF), its finite-sample critical
+# values, PSY date-stamping, a secondary strict-local-martingale check, and the
+# analysis linking detected episodes to the short-friction proxies.
+detect:
+  psy:
+    stat: "gsadf"            # "gsadf" (flexible window) | "sadf" (expanding)
+    adf_lag: 1               # fixed number of lagged differences in the ADF regression
+    min_window_frac: null    # r0; null -> PSY rule 0.01 + 1.8/sqrt(T)
+    significance: 0.95       # level for the scalar decision and date-stamping
+    use_log_price: true      # test explosivity in LOG price (BTC grows exponentially)
+  critvals:
+    method: "wild"           # centred-Rademacher sensitivity at actual T, primary reported dates
+    n_sim: 199               # documented actual-T wild replications
+    sim_size: 1500           # MC series length (matched r0); "wild" ignores this and uses real T
+    seed: 12345
+  date_stamp:
+    min_duration_days: null  # null -> ~log(T) days; else an integer minimum episode length
+  slm:                       # strict-local-martingale volatility diagnostic (exploratory)
+    enabled: true
+    tail_quantile: 0.6       # upper-tail fraction for the log-log elasticity fit
+  link:                      # relate detected episodes to funding/borrow proxies
+    max_lag_days: 30
+    predict_lag_days: 1      # calendar-day lag in retrospective association
+    realized_vol_window: 30
+    model: "probit"          # "probit" | "logit"
+    hac_lags: 30             # primary dependence sensitivity; compare 7 and 60 days
+
+# ----- Synthetic data (for later Phase IV benchmarking) -----
+synthetic:
+  seed: 42
+  n_paths: 1000
+  n_steps: 1000
+  t_horizon: 1.0
+  s0: 1.0
+  # sigma governs how strongly the CEV bubble shows: at sigma=0.2 over T=1 the
+  # process stays near s0 where CEV ~ GBM and the strict-local-martingale defect
+  # (E[S_T] < s0) is negligible. sigma=0.5 makes the bubble clearly visible
+  # (E[S_T]/s0 ~ 0.94) with no absorption at 0. GBM stays a true martingale
+  # (E[S_T] ~ s0) at any sigma.
+  sigma: 0.5
+  cev_rho: 2.0                  # rho > 1 gives a strict local martingale (bubble)

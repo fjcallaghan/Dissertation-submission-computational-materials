@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.DS_Store
+data/
+figures/
+logs/
+pilot/option_reliability/raw/
+pilot/option_reliability/outputs/
