@@ -1,5 +1,5 @@
 {
-  "complete_local_revision": "github-publication-2026-09-10",
+  "complete_local_revision": "final-audit-corrections-2026-09-11",
   "algorithm": "SHA-256",
   "note": "These files are not delivered. Checksums do not imply public availability. Public README and replay instructions replace their complete-local counterparts.",
   "files": {
@@ -123,6 +123,134 @@
       "sha256": "dcacc7320dee8f6674884d6a1bcc596be68779918b2fb676fb469a1459852b48",
       "reason": "Outside the public code overview; historical internal/editorial provenance retained locally."
     },
+    "docs/implementation/accessibility-narrative-2026-09-10/README.md": {
+      "sha256": "976f4ae5d96b11d8d25522f2c9ab00818e2ddaebdd54b96ddae1d25f82e4349a",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/accessibility-narrative-2026-09-10/before/thesis/main.tex": {
+      "sha256": "aa146bed4a612dfee2fa1728ffd969d1f75dc20351960de9ad793ba11993c5be",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/accessibility-narrative-2026-09-10/before/thesis/references.bib": {
+      "sha256": "168c229ab6ab33a9a617782fc17d5da1cd240408ed40e104c954e51903279a00",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/accessibility-narrative-2026-09-10/edits.json": {
+      "sha256": "e01ee7f7da949d6ac71ea0d44ff6a79761529c431f20270f34ba47ba17f9d0c3",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/accessibility-narrative-2026-09-10/verification.json": {
+      "sha256": "c15719785a4c2b4bb77dfe8e12e19fc70a6292b49b569b8c19639c3b1dce78b3",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/accessibility-narrative-2026-09-10/verify.py": {
+      "sha256": "016ddba9d14f192d52f0a26bd2b37aeb00cbaec0adb0d045114853a13442382f",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/README.md": {
+      "sha256": "c4df5f11f61d99beb81e3dd14e58dc4c3aa713aced4d9171009de5dc7752a53b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "6bcfc47dab394a4b28b7b3584043510e560c4eeea21cd3b29d7df1a14d74886f",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/before/thesis/README.md": {
+      "sha256": "d32465f820a7db564120d0c84ea3fd7a52b0260b416e3605a5e78684362b28be",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/before/thesis/main.tex": {
+      "sha256": "16fe6fd47f3fe8958a79fe30cd58b717f23849c8473f4d49e946af7e5dc9f1ce",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/before/thesis/references.bib": {
+      "sha256": "168c229ab6ab33a9a617782fc17d5da1cd240408ed40e104c954e51903279a00",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/package.py": {
+      "sha256": "29caf70b03d3b74d2bf02478fe60a3a50c5672ce91e54151281fe8a370c4f25b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/supplement-files.json": {
+      "sha256": "be0b275f05884d3bc896e7338bcf43a4a8b0ed8cc08b9dd5b867d914154c4d9d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/verification.json": {
+      "sha256": "824ced44a57b7e6e694b2c0533f20605501eb8eb1d05e35a060131bf3d2a8319",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/verify.py": {
+      "sha256": "1d6127a0f42c72775d384c1923abf1f047bb480c2dec150cac4232f7dc8c720e",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-ch6-identification-2026-09-11/visual-review.json": {
+      "sha256": "ae3b91aefd7aa7e8b9be411d51c7c5a152e64a164227124ebb8380b26fdd869d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/README.md": {
+      "sha256": "d8c0fd948642c77466bc0ba1040dc50b0750a6417a40534961656a68fe8a286e",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/before/thesis/main.tex": {
+      "sha256": "a42a36fe9848f4aef8de717c2e1c2ffacfe2a8d0ebad5e49904acb824e5cb4ae",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/before/thesis/references.bib": {
+      "sha256": "168c229ab6ab33a9a617782fc17d5da1cd240408ed40e104c954e51903279a00",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/edits.json": {
+      "sha256": "3706e84de4ec830fb92109fee04f3854dfedfd6ecb7ca6d22c6445a4bb7226fe",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/verification.json": {
+      "sha256": "1c162ae56eea46d34462fa7e755d9517f08b8c458d0f568815d91a7dc072fa75",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-clear-writing-2026-09-10/verify.py": {
+      "sha256": "d094d652b1249308921b8982b94464863e1112bb35abf069bf6654640165d6d5",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/README.md": {
+      "sha256": "89365ea6851b9623af39dcf19c72e6bcafebd6d4bb90551cc4dfe0698a63b217",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "0fd4b8789c971d751eff471d2a8e1cf2323289cec6ed45988ca825421f7f0842",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/before/thesis/README.md": {
+      "sha256": "d51391cf1d67677b5d7e3b4c3667f0dc32f0309e878b2ce55ce7bb0dbf461273",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/before/thesis/main.tex": {
+      "sha256": "8bd200099f1046d8a84dcb5742b81fc7a06c06e33200f4399eee14609b6cc5e2",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/before/thesis/references.bib": {
+      "sha256": "168c229ab6ab33a9a617782fc17d5da1cd240408ed40e104c954e51903279a00",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/package.py": {
+      "sha256": "e2818467469092122fccd95bac77a3a98a629616b636e08d150d1fe190d03a5b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/supplement-files.json": {
+      "sha256": "89a196cc03de338b3feba791fc8f1a36229a0af4d99a69f88215520b97b5d3b7",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/verification.json": {
+      "sha256": "3aa4b499f5c3bd997f8cd20ca2ffc85868dc25cf1ea099787e6e6259d9096304",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/verify.py": {
+      "sha256": "04dbcbae4fa7b4be9331179c01291041beafe8bbf6ee5a69e50f31d329627663",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/ch5-two-part-explanation-2026-09-11/visual-review.json": {
+      "sha256": "dcf18e0644beca7c99e4adb24749c76be3ac1ad0e4bffaee1a32119461c4ed6f",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
     "docs/implementation/ch5/README.md": {
       "sha256": "9ac1c987cc5b34fc6fa818c38a2c941109ce493c23aa2b654b6035d0b258e06a",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
@@ -132,11 +260,11 @@
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
     "docs/implementation/ch5/provenance.json": {
-      "sha256": "9f1afcc59a719cc8ea5c7f2c9ec699fb257cb88d2978a70861bc7aa3327b5041",
+      "sha256": "b3958b1c0e2cf9b29a2cc22af7e5cf01353add3f12527e93403da231ff5662a6",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
     "docs/implementation/ch5/results.json": {
-      "sha256": "4fa2190995362c1caecbee5c0a6b7e4b4d18a38af9a1f9423a5e950bee551710",
+      "sha256": "56ba16a6ff68f96c60723862bf5f2af4e5e8871f602844bcb13011d1a1a5b560",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
     "docs/implementation/contribution-attribution-2026-09-10/README.md": {
@@ -179,6 +307,62 @@
       "sha256": "82782c6852751f1d208fbbd1f95b47de61b41d980be2ce0bc68b029472d25fad",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
+    "docs/implementation/contributions-wording-2026-09-11/README.md": {
+      "sha256": "effe5597a317ac62629581bc56a9337fe8d547c5d30118b6fcb06e9311a7f838",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "97e98613cfa8a56723c126c078a7a677a249c66cd186851febec1253b0175615",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/before/thesis/main.tex": {
+      "sha256": "aeef0a60532020ee6ede48cd366dbb487fa350dcb8a0ef74b7c93dce9b3feb88",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/package.py": {
+      "sha256": "376932087ae0fc0cae2acc70f57814d1f644792d2ff5752f444f13cf01fd54de",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/supplement-files.json": {
+      "sha256": "8e90d18e81db981934aac1595f353ebc22ae6f89a6f5aadafd10984053750dfd",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/verification.json": {
+      "sha256": "ba94ed5fba9f56b8fa38cbc5b53cfc6fd23b2ecb871d4103ae31ee905105780c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/verify.py": {
+      "sha256": "d5fd526be0c04abe38c4ab793fd8b92b4b27429c77afad054cc6e48c33513358",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/contributions-wording-2026-09-11/visual-review.json": {
+      "sha256": "76366a5b3bb4b128969491d833e530c011024fa0eb7ee953f53bef6b4546f7f5",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/README.md": {
+      "sha256": "19da7d869baeb1f1b33b04c7af891e2a8b6c66dda0d434f8ba7219b6bf697a5e",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/before/thesis/main.tex": {
+      "sha256": "c584365362116c72a93d5ad2014e1efaf23ec7c75179f2a0006c0f39e1e2507b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/before/thesis/references.bib": {
+      "sha256": "168c229ab6ab33a9a617782fc17d5da1cd240408ed40e104c954e51903279a00",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/edits.json": {
+      "sha256": "49ad3d3cdbc351e64accbae779d3eb616f8bea8688bbac0551da88e29afa4abf",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/verification.json": {
+      "sha256": "0aca5e94d34d242a8bb6455ea5b17e5f793ae1ea077c92b474647715a1a4a33c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/data-section-readability-2026-09-10/verify.py": {
+      "sha256": "429332948b77e59c4c8354c1e96491c26f78e9cd7dcc45f9b38a3e2518ea23ef",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
     "docs/implementation/final-2026-09-07/README.md": {
       "sha256": "20a3e10f75de16f807ccec0643dabe3c13589b7fac3c608d2553929164c2bcd4",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
@@ -216,8 +400,80 @@
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
     "docs/implementation/final-2026-09-07/verification.json": {
-      "sha256": "5a30b3a3f42a378e265f0a94f59ca9259312eaca7a9e0b4eacac4bf87d9974f2",
+      "sha256": "36cdb62d88f54c5f812b3650ab26007138b039fc42461fdffd94bca2a3c4d761",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/README.md": {
+      "sha256": "db5452af5e5bc8e2d0ad8e45ca1915d7c132e77268827ff447386cd659a429f2",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "fb3e10c0b2eff46cd8df3bc2fe7ecb37f0648e292fd08ccf31b4c2750760a69c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/before/docs/implementation/ch5/results.json": {
+      "sha256": "4fa2190995362c1caecbee5c0a6b7e4b4d18a38af9a1f9423a5e950bee551710",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/before/docs/implementation/final-2026-09-07/results.json": {
+      "sha256": "ffaa544b02269e012fdfe7df606239aad5b775ba006557add64fb454d5c77344",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/before/thesis/main.tex": {
+      "sha256": "debe8e23c124d6d163d7315d33a837b273a3cc8710bd429c562f518e82eec4d2",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/changes.diff": {
+      "sha256": "99c420ec02a3980535f3c99fe572d05c92e148f90ff842ce34b7e85212a9f093",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/covariance-verification.json": {
+      "sha256": "92f5d17f7033be5ce617900aa6782d655c796591bb445d827373386e993013d7",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/final-exhibits.log": {
+      "sha256": "8c3a3b4548fd50f96a7a175f29ff8bb055c8b86b7ffba15b6530535bcb5ba7b0",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/historical-replay.log": {
+      "sha256": "a253c1164ffbf492ea0e208b0227c45bf6bf9033498b3748ffb15c4565c8a1c7",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/inputs-before.json": {
+      "sha256": "668892a50f5a77e5f8fb20601f4aaf1d30e15131f6d755255222b6d88f04a83c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/numerical-verification.log": {
+      "sha256": "d1e76a2cbfa4f1793a7e2bb9803cfe65d9fb6eabd376f032f6791fa8d8b350e5",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/package.py": {
+      "sha256": "4c41b9af64a73de4e8969f2ad2d68422b1473dd5518926229d97c32eb286eb55",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/public-tests.log": {
+      "sha256": "369f65e99448d17361ae26ec27a249c48f4580da196695c011381b6802d8029c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/supplement-files.json": {
+      "sha256": "b81e578992ee2bae634f0756cc5f13026c02d974162fcc1d7467cbc8a7edef5d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/tests.log": {
+      "sha256": "69ce78103fb8e052e0a296d452f6514d680054539a6eb9d5118808ec2e6dea8e",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/verification.json": {
+      "sha256": "1d0a6117533ac84d27637461328662d9c4bee51e7a0202f731d02446f9fa6dd6",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/verify.py": {
+      "sha256": "3bf3f40da5c984372dba3526452d54803d93018cbabaed265144cd4a1dc7ded0",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/final-audit-corrections-2026-09-11/visual-review.json": {
+      "sha256": "feee2008da746961dfd46e8ab4a78eff3ba496534d1df8b17467f7a33c38605d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
     },
     "docs/implementation/github-publication-2026-09-10/SUPPLEMENT-README.md": {
       "sha256": "9e2d869574ef40acecbcbbeaea2cfa8eb0a2811c1a05ffd3cca559082ebd0a39",
@@ -338,6 +594,58 @@
     "docs/implementation/independent-review-2026-09-07/verify.py": {
       "sha256": "fa7d55c811c6ff96c16238e0ea0fc0c0ee0f00fe50c2244aec32b199066001d3",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
+    },
+    "docs/implementation/minor-edits-2026-09-11/README.md": {
+      "sha256": "eed565f2da6484ffb249743dcaeb06e53d40517eb39b43a0678b34ac91b6ae12",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "023c1dbb308657702b8a860a160275e858839d32be1d2a994136a911a9b60505",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/before/src/plots/figures.py": {
+      "sha256": "31686da43ec4c827dac2a3dd56dcad2a2555b0ac6e428bb58ca472de4e9ec98c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/before/thesis/fig5_bubbles_vs_proxies.png": {
+      "sha256": "79cacff879da2b34f89652cf30b0076deb13bf2f32134870352b76439864cbb0",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/before/thesis/main.tex": {
+      "sha256": "35fbe831378b1e8e156d1d3974090954668c460b0954d8b6a5a0b9f392e99850",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/figure-verification.json": {
+      "sha256": "d8dec6130166f83a9808001e3d9dec33f5e861f9d79aa772471a998807e84cc8",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/package.py": {
+      "sha256": "28e9a65ab78ec24d4a49990afdfb22787c2b318a9c2fb82156b849e4b03404d6",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/preserved-inputs.json": {
+      "sha256": "ec97cb5a369f038dfac522bc4de9fa7730602e095cd7a1b3935bc5f0dfe58c05",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/source.diff": {
+      "sha256": "17c267a58b7dc9f88467f2ecbeed02972b444ced63990c19aa889398833b4aae",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/supplement-files.json": {
+      "sha256": "a8b4b184dec509b0b1967699790c72dabdee62457eedce03af5e24b74981fe3d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/verification.json": {
+      "sha256": "6785f42a0203d02629178aa5d86b3b2fe534a3ff817aa7a9286e9bc407c86098",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/verify.py": {
+      "sha256": "dc14461ab4c62d981b4f3ae0c7d667a1e983321a000ffe25376a5f19a65cd674",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/minor-edits-2026-09-11/visual-review.json": {
+      "sha256": "9439c2bbb0926c95e41d6625d503e49f164753170e4e00d8ba7780b2bbb9db8d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
     },
     "docs/implementation/named-results-2026-09-09/README.md": {
       "sha256": "b6554591fba0c0b2a1709505fda43bbc65ec39a987df07c1d27dbd45a1a47450",
@@ -575,6 +883,70 @@
       "sha256": "d00582b8bde7da142022bf524163f0cf2f03dcd805eab839b1078d1b4475d283",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
     },
+    "docs/implementation/subsection-consolidation-2026-09-10/README.md": {
+      "sha256": "9767b40f6c7d36a33f80e21925c1b2cb1b0aef8819182f956b92ba564724ff6b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/SUPPLEMENT-README.md": {
+      "sha256": "23ac29c7bebbe11195d358f377237b80ef046dab86bf5f651329759489aa3433",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/edits.json": {
+      "sha256": "173e210f37f80195422dde0642a4f41db7c81ac7d0081cb210b4144fc121dc7f",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/package.py": {
+      "sha256": "d8c1c7e63ca175ecf4f78c9aa7233e4d9f4f1b6f1b5db9fb2613f7a010cbf78b",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/supplement-files.json": {
+      "sha256": "be9d5cb43f2b6b60f5371f5d216ced3bf87cde7c69af2049ac972106a9343cbf",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/verification.json": {
+      "sha256": "10407fe8154c7a150dd4a5977483ca4c8acf3e2cabf1f6dc8d6111e86a6ba6d5",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/verify.py": {
+      "sha256": "4387ea6fc8f0b105557e600682ecfdc8e954fe3890b462ecfcde9bc32484e26c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/subsection-consolidation-2026-09-10/visual-review.json": {
+      "sha256": "6f722b88b5581a8eebd0a671a6ef1555b3ef0d682dd47c8b22e4f2caa04e134d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/README.md": {
+      "sha256": "7a8faf37259ff55e79f4006ab4b523f58591a6a4f1c5a9097e757bde537108c5",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/SUPPLEMENT-README.md": {
+      "sha256": "fa4ec144911c745b71e45482cfea0a9773dc00b07027855b8c0dc83e9ae054cd",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/before/thesis/main.tex": {
+      "sha256": "2ab55cb98c7a9986df3afecf0c8631045e430d905887bf1b4d3b48cb7eca59cc",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/package.py": {
+      "sha256": "a3943fbd516d10cba5f56fdfe9198761fee46e62c3aec9a580edd0db91c0f50c",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/supplement-files.json": {
+      "sha256": "c162c507f93e615681d43990e7df9a5c41dbc10bd92417ab948e9905da34e647",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/verification.json": {
+      "sha256": "8366a3aa07be91d0233b8590084f3aced8cd1c51d2ce3979d4369bd1e19f2686",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/verify.py": {
+      "sha256": "f11d4c5511be944e9e5db54e0610e82d7a5dfb298e022c26d7b2fa40ab74e6fe",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/implementation/theorem-spacing-2026-09-11/visual-review.json": {
+      "sha256": "f80c2d6274ffcd309944f26a771136d682ea2d71aef4986d4cd2f123bd319da8",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
     "docs/implementation/thesis-shortening-2026-09-10/README.md": {
       "sha256": "1a94a87e2568cc809c1395af7db1aa4e62faf2b99228cb4562b7122e46899eae",
       "reason": "Historical output/supporting source or editorial record retained locally; may contain observation-derived material."
@@ -651,6 +1023,38 @@
       "sha256": "3d9c671c06b28f197b00198491b9b701ea92d6e51f0ff0d2505db0c15d3111fa",
       "reason": "Outside the public code overview; historical internal/editorial provenance retained locally."
     },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/FINAL_REVIEW.md": {
+      "sha256": "6445db7effd1432e24bdd9de509f9535f449c34e764cc620fe5388119200e9e8",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/RESOLUTION.md": {
+      "sha256": "9db12ef1f572d42a3b778c0492ff8af3438d00b5afa979cf8e961ed770b3140d",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/completed-day-draws.npz": {
+      "sha256": "10285ee368ee4dbf61fc1fd9124e95d607e4180d0b444a26270372e925232647",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/completed-day-sensitivity.json": {
+      "sha256": "ce38df9ae4d09555e4fd743f82d25a677255f47933ca9821dd4c920284debfb2",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/completed_day_sensitivity.py": {
+      "sha256": "91c04078dba71270f542e8eb3e70ce2285d109746371203ec6d42aae5bf3cd6f",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/independent-results.json": {
+      "sha256": "ea904c200c630095838cb0327f34e3ca223996b3085a3a0b2a72394dedfd4733",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/input-manifest.json": {
+      "sha256": "cf180ea080d1587fda369763d248e7c985d367d451f5febb4ee14e19dbc50b94",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
+    "docs/reviews/final-mathematics-code-audit-2026-09-11/proposed-hc1-fix.patch": {
+      "sha256": "02c46e5b69b97319c1ce031eec12fd4355732bafdc5a18388774354079543bc1",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
+    },
     "docs/reviews/proof-selection-and-exposition-review-2026-09-09.md": {
       "sha256": "d38009015834de569efba3f230e1b688eb88c2ffceacdabda8d760c52aef65c9",
       "reason": "Outside the public code overview; historical internal/editorial provenance retained locally."
@@ -662,6 +1066,10 @@
     "docs/reviews/reference-review-2026-09-09/review.md": {
       "sha256": "5ea3fad005b8b5913392aa374caf3ca9b9ae2d837ff5fbd0ad1b44f198633e34",
       "reason": "Outside the public code overview; historical internal/editorial provenance retained locally."
+    },
+    "docs/reviews/subsection-consolidation-2026-09-10.md": {
+      "sha256": "b5c5a58b3b1d3b2ec7d093b576fc10da26409476587d0a079ce305b23ac7c4bd",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
     },
     "docs/reviews/thesis-shortening-plan-2026-09-10.md": {
       "sha256": "a99deaf5a6ab630e5cf233b5599d0d47de5a4816db56746e076b0625e49dd2d4",
@@ -2476,12 +2884,16 @@
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/README.md": {
-      "sha256": "a9dae2eb0715a6b782c16a0610854fc94d8b0f0d350d04825ffa6c1330a8bac2",
+      "sha256": "07cc5fd29248fcc8f8a27ae4e59b286b75d021a7326efbceabac122e14fc5e5c",
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/_local/README.md": {
       "sha256": "107c349477154a0320e5ed117d7b23dc7d99cd3356f3a21b8368ba0c43dda56a",
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
+    },
+    "thesis/_local/main.bbl": {
+      "sha256": "5813413c1f652a781cbc3ee84acb46ed7892e41c0823733e8996e13f0cfb1ce1",
+      "reason": "Complete local audit/reproduction documentation or dissertation material; withheld from the public code deposit."
     },
     "thesis/_local/make_figures.py": {
       "sha256": "92106dc0d61714a91bf40ef51a5116f9c0e14e1fc51f68b59575ef3235ad6930",
@@ -2508,7 +2920,7 @@
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/ch5_sensitivity_rows.tex": {
-      "sha256": "1f4dbe4a4c6dedd09190687d266a3bb14a52f3ca1239f67b373de2a689ec278d",
+      "sha256": "0fb8d6f3ed5d521788386dbbd0827f33c8c878393ebca50dea37cf35778d3684",
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/fig4_gsadf_datestamp.png": {
@@ -2516,7 +2928,7 @@
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/fig5_bubbles_vs_proxies.png": {
-      "sha256": "79cacff879da2b34f89652cf30b0076deb13bf2f32134870352b76439864cbb0",
+      "sha256": "3a6e71868004d8401b1a337d263fbeb18b14fc3f41391b4f01fef8c40ba32975",
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/fig_ch2_defect.png": {
@@ -2560,7 +2972,7 @@
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/main.tex": {
-      "sha256": "aa146bed4a612dfee2fa1728ffd969d1f75dc20351960de9ad793ba11993c5be",
+      "sha256": "d1a2fbc1f42d7fa33f11e98970c4e9441f22f98bfbece646073c6005563cf616",
       "reason": "Thesis source/assets retained locally; includes observations and empirical exhibits."
     },
     "thesis/references.bib": {

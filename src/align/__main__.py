@@ -52,7 +52,7 @@ def main(argv: list[str] | None = None) -> int:
     fdaily = funding_to_daily(funding, rate_col=rate_col)
     if agg == "mean":
         fdaily["funding_daily"] = fdaily["funding_mean"]
-    else:  # "sum" (default) or "none" -> still expose the daily sum here
+    else:  # "sum"; configuration validation rejects unsupported modes
         fdaily["funding_daily"] = fdaily["funding_sum"]
 
     # Rolling mean is computed on the per-8h (mean) scale so it is comparable to
@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     fdaily["funding_elevated"] = fdaily[f"funding_roll{win}d"] > thr
 
-    # Direct short-cost proxy: daily BTC margin borrow rate (2016+, so it also
+    # Executed BTC lending-rate proxy (2016+, so it also
     # covers the 2017 cycle in the full series). Prefer the cleaned series.
     borrow_daily = None
     if cfg.borrow_enabled:

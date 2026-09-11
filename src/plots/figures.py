@@ -145,7 +145,7 @@ def figure_price_borrow_overlay(
     start: pd.Timestamp,
     annualise: int = 365,
 ) -> plt.Figure:
-    """Figure 3 — price (log) overlaid with the DIRECT short-cost proxy.
+    """Figure 3 — price (log) overlaid with the executed BTC lending-rate proxy.
 
     The daily BTC margin borrow rate (Bitfinex fBTC) is annualised for
     readability and drawn with its rolling mean. Because borrow history reaches
@@ -175,11 +175,11 @@ def figure_price_borrow_overlay(
              label="borrow rate (annualised)")
     ax2.plot(b["borrow_time"], b["roll"], lw=1.3, color="#1b5e20",
              label=f"borrow {rolling_days}d rolling mean")
-    ax2.set_ylabel("Implied annualised BTC borrow cost", color="#2ca02c")
+    ax2.set_ylabel("BTC lending rate (annualised)", color="#2ca02c")
     ax2.tick_params(axis="y", labelcolor="#2ca02c")
 
     ax1.set_title(
-        "BTC-USD price (log) and the DIRECT short-selling-cost proxy "
+        "BTC-USD price (log) and the executed BTC lending-rate proxy "
         f"(Bitfinex fBTC borrow rate), {rolling_days}-day rolling mean"
     )
     lines = ax1.get_lines() + ax2.get_lines()
@@ -246,7 +246,7 @@ def figure_bubbles_vs_proxies(
     """Figure 5 — detected episodes against both short-friction proxies.
 
     Two stacked panels sharing the price axis make the *era handoff* explicit:
-    the direct borrow rate (2016+, top) carries the short-cost signal around the
+    the executed lending rate (2016+, top) provides observations around the
     2017 episode, while perpetual funding (2019+, bottom) is the live signal
     around 2021. Detected GSADF episodes are shaded on both.
     """
@@ -255,7 +255,7 @@ def figure_bubbles_vs_proxies(
 
     fig, (axb, axf) = plt.subplots(2, 1, figsize=(11, 7.5), sharex=True)
 
-    # --- top: borrow rate (direct proxy, 2016+) ---
+    # --- top: executed lending-rate proxy (2016+) ---
     axb.plot(d["date"], d["close"], lw=1.0, color="#1f77b4", label="BTC-USD (log)")
     axb.set_yscale("log")
     axb.set_ylabel("Price (USD, log)", color="#1f77b4")
@@ -269,7 +269,7 @@ def figure_bubbles_vs_proxies(
               label=f"borrow {rolling_days}d mean (ann.)")
     axb2.set_ylabel("Borrow cost (ann.)", color="#2ca02c")
     axb2.tick_params(axis="y", labelcolor="#2ca02c")
-    axb.set_title("Detected episodes vs the DIRECT proxy — Bitfinex fBTC borrow rate (2016+)")
+    axb.set_title("Explosive episodes and BTC borrowing rates (Bitfinex, 2016 onwards)")
 
     # --- bottom: funding rate (indirect proxy, 2019+) ---
     axf.plot(d["date"], d["close"], lw=1.0, color="#1f77b4", label="BTC-USD (log)")
@@ -286,7 +286,7 @@ def figure_bubbles_vs_proxies(
               label=f"funding {rolling_days}d mean")
     axf2.set_ylabel("Funding (per 8h)", color="#d62728")
     axf2.tick_params(axis="y", labelcolor="#d62728")
-    axf.set_title("Detected episodes vs the INDIRECT proxy — Binance funding rate (2019+)")
+    axf.set_title("Explosive episodes and perpetual funding rates (Binance, 2019 onwards)")
     axf.xaxis.set_major_locator(mdates.YearLocator())
     axf.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
 

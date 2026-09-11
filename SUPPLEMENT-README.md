@@ -1,8 +1,8 @@
 # Public thesis supplement: numerical snapshot dated 7 September 2026
 
-Publication revision: 10 September 2026. Accompanies *Modelling and Detection of Asset Price Bubbles: Discrete Time Theory, Short Selling Restrictions, and Bitcoin*, Freddie Callaghan, University of Bath, September 2026.
+Publication revision: 11 September 2026 (final audit corrections). Accompanies *Modelling and Detection of Asset Price Bubbles: Discrete Time Theory, Short Selling Restrictions, and Bitcoin*, Freddie Callaghan, University of Bath, September 2026.
 
-Release: [thesis-submission-v1](https://github.com/fjcallaghan/Dissertation-submission-computational-materials/releases/tag/thesis-submission-v1).
+Release: [thesis-submission-v2](https://github.com/fjcallaghan/Dissertation-submission-computational-materials/releases/tag/thesis-submission-v2).
 
 ## Read this first: reproduction limits
 
@@ -28,6 +28,12 @@ python -m pytest -q tests pilot/option_reliability/tests
 ```
 
 The tests use synthetic fixtures and do not require withheld observations. They check implementation behaviour; passing them is not independent reproduction of the empirical results. The acquisition-time yfinance version was not recorded and is not inferred from the later environment record.
+
+## Corrections in this release
+
+HC1 now applies n/(n-k), with n counting estimation observations and k including the intercept. The principal HAC implementation is unchanged. The runner supports GSADF and daily sum/mean alignment; unsupported SADF or eight-hourly alignment settings are rejected. Zero-episode runs now replace any older episode table. All 102 synthetic tests pass.
+
+The frozen price snapshot is retained. Its final 20 July 2026 daily bar was retrieved at 23:03:44 UTC that day and is provisional. The revised dissertation discloses this and a completed-day sensitivity that preserves the main conclusions. The completed-day inputs and outputs remain part of the withheld local materials.
 
 ## Conditional historical replay
 

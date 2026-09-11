@@ -39,7 +39,7 @@ cache:
 funding:
   # How the 8-hourly funding series is collapsed to daily frequency
   # when aligned with the daily price series.
-  # Options: "sum" | "mean" | "none" (keep 8-hourly, align price forward)
+  # Options: "sum" | "mean". Eight-hourly alignment is not supported.
   daily_aggregation: "sum"
 
   # Rolling window for the smoothed funding line in the overlay figure.
@@ -50,20 +50,20 @@ funding:
   # short-friction signal, not a short-selling cost. 0.0003 = 0.03%.
   elevated_threshold: 0.0003
 
-# ----- Short-selling cost proxy (direct): margin borrow rate -----
-# The perpetual funding rate above is only an *indirect* short-friction proxy
-# (it is the premium longs pay; a short is paid, not charged). The margin borrow
-# rate is the *direct* cost of borrowing BTC in order to short it. Source: the
-# Bitfinex public funding/lending market for BTC (fBTC). Unlike the 8-hourly
+# ----- Executed BTC lending-rate proxy -----
+# Positive perpetual funding is paid to shorts. The Bitfinex series records
+# executed BTC lending transactions; it is not a borrowing offer available
+# to every investor on identical terms. Source: the public fBTC lending market.
+# Unlike the 8-hourly
 # perpetual funding series this is a DAILY rate, and its history begins in
 # mid-2016 — so it also covers the 2017 cycle, which the Sep-2019 funding
 # window misses.
 borrow:
   enabled: true
   source: "bitfinex"
-  # Bitfinex v2 candle key. fBTC = BTC funding/lending market (cost to borrow
-  # BTC to short). "a30:p2:p30" = 30-day-aggregated Flash Return Rate, the
-  # standard reference series; rates are expressed per day.
+  # Aggregate fBTC lending-trade candle over loan periods p2 through p30.
+  # CLOSE is the last executed rate in the daily candle, expressed per day.
+  # This candle is distinct from Bitfinex's separately defined Flash Return Rate.
   bitfinex_candle: "trade:1D:fBTC:a30:p2:p30"
   start: "2016-01-01"           # fBTC history begins mid-2016
   # Borrow candles are already daily; if a day carries more than one record it
@@ -72,7 +72,7 @@ borrow:
 
 # ----- Cleaning -----
 cleaning:
-  # Liquidation-cascade spikes are flagged, not silently dropped.
+  # Statistical outliers are flagged; the rule does not identify their cause.
   # A funding observation is flagged as a spike if its absolute value
   # exceeds spike_sigma standard deviations from a rolling baseline.
   spike_sigma: 5.0
@@ -102,7 +102,7 @@ plots:
 # analysis linking detected episodes to the short-friction proxies.
 detect:
   psy:
-    stat: "gsadf"            # "gsadf" (flexible window) | "sadf" (expanding)
+    stat: "gsadf"            # The runner supports GSADF only.
     adf_lag: 1               # fixed number of lagged differences in the ADF regression
     min_window_frac: null    # r0; null -> PSY rule 0.01 + 1.8/sqrt(T)
     significance: 0.95       # level for the scalar decision and date-stamping

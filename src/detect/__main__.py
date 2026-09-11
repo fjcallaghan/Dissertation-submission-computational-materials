@@ -148,7 +148,9 @@ def main(argv: list[str] | None = None) -> int:
             "peak_date": _fmt_date(seg["date"].iloc[i_pk]),
             "peak_price": float(seg["close"].iloc[i_pk]),
         })
-    ep_df = pd.DataFrame(ep_rows)
+    ep_df = pd.DataFrame(ep_rows, columns=[
+        "start_date", "end_date", "n_days", "peak_date", "peak_price",
+    ])
 
     stat_lines = [
         f"GSADF statistic     : {r.gsadf_stat:.3f}",
@@ -196,7 +198,7 @@ def main(argv: list[str] | None = None) -> int:
     link_df = link_df.set_index("date")
 
     controls = ["return", "realized_vol"]
-    for proxy, label, start_col in (("borrow_daily", "Borrow rate (direct, 2016+)", "borrow_daily"),
+    for proxy, label, start_col in (("borrow_daily", "Executed BTC lending rate (2016+)", "borrow_daily"),
                                     ("funding_daily", "Funding rate (indirect, 2019+)", "funding_daily")):
         sub = linkmod.daily_frame(link_df.copy())
         sub[proxy] *= 10000  # coefficients and regime means per basis point/day
@@ -239,8 +241,8 @@ def main(argv: list[str] | None = None) -> int:
         "bsadf_cv": cv_seq, "in_episode": in_ep,
     })
     datasets.save_processed(seq_df, cfg, "gsadf_sequence.parquet")
-    if not ep_df.empty:
-        datasets.save_processed(ep_df, cfg, "bubble_episodes.parquet")
+    # Replace a previous run's episodes even when this run finds none.
+    datasets.save_processed(ep_df, cfg, "bubble_episodes.parquet")
     # Small sidecar so `python -m src.plots` can redraw fig4 with the right title.
     (cfg.processed_dir / "detect_meta.json").write_text(json.dumps({
         "gsadf_stat": r.gsadf_stat, "sadf_stat": r.sadf_stat,

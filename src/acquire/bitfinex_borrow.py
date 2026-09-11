@@ -1,30 +1,23 @@
-"""Bitfinex BTC margin borrow (lending) rate — the DIRECT short-selling-cost proxy.
+"""Executed BTC lending-rate proxy from Bitfinex's fBTC market.
 
-The perpetual funding rate (``binance_funding`` / ``bybit_funding``) is only an
-*indirect* proxy for short-selling frictions: it is the premium longs pay, and a
-short is *paid* on a positive rate. The margin borrow rate is the cost of the
-friction itself — the rate paid to borrow BTC in order to sell it short. It is
-the crypto analogue of the equity short-borrow fee used by Ofek & Richardson
-(2003) to link short-sale constraints to the dot-com bubble.
+The series records completed lending transactions across different loan terms.
+It is not a borrowing offer available to every investor on identical terms.
+Positive perpetual funding, by contrast, is paid to a short position.
 
-Source: the Bitfinex public funding/lending market for BTC (``fBTC``), via the
-v2 candles endpoint. Unlike the 8-hourly perpetual funding series this is a
-**daily** rate, and its history begins in mid-2016 — so it also covers the 2017
-cycle that the Sep-2019 funding window misses.
+Endpoint: GET https://api-pub.bitfinex.com/v2/candles/{candle_key}/hist
+The key trade:1D:fBTC:a30:p2:p30 selects an aggregate lending-trade candle
+across loan periods p2 through p30. It is distinct from Bitfinex's separately
+defined Flash Return Rate. Rows are [MTS, OPEN, CLOSE, HIGH, LOW, VOLUME];
+CLOSE is the last executed rate in the daily candle, expressed per day.
+The saved history begins in mid-2016.
 
-Endpoint: ``GET https://api-pub.bitfinex.com/v2/candles/{candle_key}/hist``
-  ``candle_key`` e.g. ``trade:1D:fBTC:a30:p2:p30`` (30-day-aggregated Flash
-  Return Rate). Response: a JSON array of candles
-  ``[MTS, OPEN, CLOSE, HIGH, LOW, VOLUME]``; CLOSE is the day's rate, a per-day
-  fraction.
+At acquisition, this endpoint rejected start/end parameters with HTTP 500.
+The fetch therefore requests the most recent limit candles and filters the
+configured window locally. A full response at the 10,000-row cap raises a
+truncation warning. This documents the observed behaviour, not a permanent
+API guarantee.
 
-  Note: this aggregated-FRR candle endpoint returns HTTP 500 when given
-  ``start``/``end`` time-range params (a server-side quirk), but serves the full
-  history reliably with ``sort=-1`` + ``limit``. We therefore pull the most
-  recent ``limit`` candles in one request and filter to the configured window
-  client-side. fBTC has ~3.6k daily rows since 2016, well under the 10k cap.
-
-Output schema: borrow_time (datetime64[ns, UTC]), borrow_rate (float, per day).
+Output: borrow_time (datetime64[ns, UTC]), borrow_rate (float, per day).
 """
 
 from __future__ import annotations
@@ -48,7 +41,7 @@ def parse_candles(rows: list[list[Any]]) -> pd.DataFrame:
     """Convert raw Bitfinex candle arrays to the borrow-rate schema.
 
     Each row is ``[MTS, OPEN, CLOSE, HIGH, LOW, VOLUME]``; CLOSE is the day's
-    rate. Pure (no network / no config) so it can be unit-tested directly.
+    last executed rate. Pure (no network / no config) so it can be unit-tested directly.
     """
     if not rows:
         return pd.DataFrame(columns=["borrow_time", "borrow_rate"])
@@ -76,7 +69,7 @@ def parse_candles(rows: list[list[Any]]) -> pd.DataFrame:
 
 
 def fetch_bitfinex_borrow(cfg: Config, client: base.HttpClient | None = None) -> pd.DataFrame:
-    """Fetch and cache the Bitfinex BTC borrow-rate series (paged forward)."""
+    """Fetch and cache the Bitfinex BTC borrow-rate series (filtered to the configured window)."""
     client = client or base.HttpClient()
     candle_key = cfg.borrow_candle
     start_ms = base.utc_to_ms(cfg.borrow_start)

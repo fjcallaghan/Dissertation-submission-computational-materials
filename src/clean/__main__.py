@@ -1,6 +1,6 @@
 """Cleaning runner — ``python -m src.clean``.
 
-Reads the raw datasets, flags funding spikes, gap-fills the price calendar, and
+Reads the raw datasets, flags statistical rate outliers, gap-fills the price calendar, and
 writes cleaned parquet files to ``data/processed/``. Reports what it changed;
 nothing is dropped silently.
 """
@@ -32,7 +32,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     n_spikes = int(binance_clean["is_spike"].sum())
     datasets.save_processed(binance_clean, cfg, "binance_funding_clean.parquet")
-    print(f"  Binance funding: {n_spikes} spikes flagged / {len(binance_clean)} obs "
+    print(f"  Binance funding: {n_spikes} outliers flagged / {len(binance_clean)} obs "
           f"({100*n_spikes/len(binance_clean):.2f}%)")
 
     bybit = datasets.load_bybit_funding(cfg)
@@ -43,9 +43,9 @@ def main(argv: list[str] | None = None) -> int:
         )
         nb = int(bybit_clean["is_spike"].sum())
         datasets.save_processed(bybit_clean, cfg, "bybit_funding_clean.parquet")
-        print(f"  Bybit funding:   {nb} spikes flagged / {len(bybit_clean)} obs")
+        print(f"  Bybit funding:   {nb} outliers flagged / {len(bybit_clean)} obs")
 
-    # --- borrow-rate squeeze spikes (daily cadence -> obs_per_day=1) ---
+    # --- borrow-rate statistical outliers (daily cadence -> obs_per_day=1) ---
     if cfg.borrow_enabled:
         borrow = datasets.load_bitfinex_borrow(cfg)
         if borrow is not None:
@@ -56,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
             )
             nbr = int(borrow_clean["is_spike"].sum())
             datasets.save_processed(borrow_clean, cfg, "bitfinex_borrow_clean.parquet")
-            print(f"  BTC borrow rate: {nbr} squeeze spikes flagged / {len(borrow_clean)} obs")
+            print(f"  BTC borrow rate: {nbr} outliers flagged / {len(borrow_clean)} obs")
 
     # --- price gap-filling ---
     spot = datasets.load_spot(cfg)

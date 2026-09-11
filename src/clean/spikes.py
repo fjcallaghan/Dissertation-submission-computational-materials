@@ -1,8 +1,8 @@
-"""Liquidation-cascade spike handling for the funding-rate series.
+"""Statistical outlier handling for funding and lending-rate series.
 
-Per the proposal, funding spikes during liquidation cascades are a distinct
-category, not normal observations. We **flag** them explicitly and keep both the
-raw and a cleaned version — nothing is silently dropped.
+We flag unusually large deviations from a rolling baseline and keep both raw
+and winsorised values. These flags do not establish data errors, liquidations,
+squeezes or any other economic cause.
 
 Rule (documented and configurable in ``config.yaml``):
     An observation is flagged as a spike when it lies more than

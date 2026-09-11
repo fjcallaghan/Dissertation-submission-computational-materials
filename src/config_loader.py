@@ -111,7 +111,7 @@ class Config:
     def elevated_threshold(self) -> float:
         return float(self.raw["funding"]["elevated_threshold"])
 
-    # --- direct short-cost proxy: BTC margin borrow rate (optional section) ---
+    # --- executed BTC lending-rate proxy (optional section) ---
     @property
     def borrow_enabled(self) -> bool:
         return bool(self.raw.get("borrow", {}).get("enabled", False))
@@ -245,7 +245,7 @@ def _parse_date(value: str) -> dt.date:
 # Enumerated choices, validated at load time so a typo in config.yaml fails
 # immediately with a clear message rather than deep inside a pipeline stage.
 _CHOICES = {
-    ("funding", "daily_aggregation"): {"sum", "mean", "none"},
+    ("funding", "daily_aggregation"): {"sum", "mean"},
     ("returns", "method"): {"log", "simple"},
     ("cleaning", "price_gap_fill"): {"ffill", "interpolate", "none"},
     ("borrow", "daily_aggregation"): {"mean", "sum"},
@@ -265,8 +265,10 @@ def _validate_detect(raw: dict[str, Any]) -> None:
         return
     psy = detect.get("psy", {})
     stat = psy.get("stat")
-    if stat is not None and stat not in {"gsadf", "sadf"}:
-        raise ValueError(f"config.yaml detect.psy.stat={stat!r}; expected 'gsadf' or 'sadf'")
+    if stat is not None and stat != "gsadf":
+        raise ValueError(
+            f"config.yaml detect.psy.stat={stat!r}; the detection runner supports only 'gsadf'. "
+            "SADF remains available through the lower-level statistic functions.")
     sig = psy.get("significance")
     if sig is not None and not (0.0 < float(sig) < 1.0):
         raise ValueError(f"config.yaml detect.psy.significance={sig} must be in (0, 1)")

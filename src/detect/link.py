@@ -106,7 +106,7 @@ def predictive_regression(
     X_rest = sm.add_constant(data[control_cols].to_numpy()) if control_cols \
         else np.ones((data.shape[0], 1))
 
-    full = Estimator(y, X_full).fit(disp=0, maxiter=200, cov_type="HC1")
+    full = Estimator(y, X_full).fit(disp=0, maxiter=200)
     rest = Estimator(y, X_rest).fit(disp=0, maxiter=200)
     converged = bool(full.mle_retvals["converged"] and rest.mle_retvals["converged"])
     if not converged:
@@ -115,13 +115,20 @@ def predictive_regression(
     # proxy is the first regressor after the constant.
     b_idx = 1
     lr = 2.0 * (full.llf - rest.llf)
-    se = float(full.bse[b_idx])
+    scores = full.model.score_obs(full.params)
+    bread = np.linalg.inv(full.model.hessian(full.params))
     if covariance == "HAC":
-        scores = pd.DataFrame(full.model.score_obs(full.params), index=data.index)
-        scores = scores.reindex(pd.date_range(data.index.min(), data.index.max(), freq="D"), fill_value=0.)
-        bread = np.linalg.inv(full.model.hessian(full.params))
-        cov = bread @ S_hac_simple(scores.to_numpy(), nlags=hac_lags) @ bread.T
-        se = float(np.sqrt(cov[b_idx, b_idx]))
+        calendar_scores = pd.DataFrame(scores, index=data.index)
+        calendar_scores = calendar_scores.reindex(
+            pd.date_range(data.index.min(), data.index.max(), freq="D"), fill_value=0.)
+        meat = S_hac_simple(calendar_scores.to_numpy(), nlags=hac_lags)
+    else:
+        nobs, nparams = X_full.shape
+        if nobs <= nparams:
+            raise ValueError("HC1 requires more observations than fitted parameters")
+        meat = (scores.T @ scores) * (nobs / (nobs - nparams))
+    cov = bread @ meat @ bread.T
+    se = float(np.sqrt(cov[b_idx, b_idx]))
     z = float(full.params[b_idx] / se)
     return {
         "model": model,

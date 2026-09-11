@@ -3,6 +3,7 @@ when the proxy is unrelated to the regime."""
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from src.detect.link import (
     lead_lag_correlation,
@@ -96,3 +97,23 @@ def test_calendar_hac_matches_statsmodels_on_complete_days():
     expected = sm.Probit(data.regime, sm.add_constant(data[["proxy", "return", "rvol"]])).fit(
         disp=0, cov_type="HAC", cov_kwds={"maxlags": 7, "use_correction": False})
     np.testing.assert_allclose(got["se_proxy"], expected.bse["proxy"], rtol=1e-8)
+
+
+@pytest.mark.parametrize("model", ["probit", "logit"])
+def test_hc1_includes_estimation_sample_degrees_of_freedom(model):
+    import statsmodels.api as sm
+    df = _frame(seed=10, planted=True)
+    # Missing observations must reduce n, not count as estimation rows.
+    df.loc[df.index[100:120], "proxy"] = np.nan
+    got = predictive_regression(df, regime_col="regime", proxy_col="proxy",
+                                control_cols=["return", "rvol"], model=model,
+                                covariance="HC1")
+    predictors = df[["proxy", "return", "rvol"]].shift(1)
+    data = pd.concat([df.regime, predictors], axis=1).dropna()
+    X = sm.add_constant(data[["proxy", "return", "rvol"]])
+    estimator = sm.Probit if model == "probit" else sm.Logit
+    hc0 = estimator(data.regime, X).fit(disp=0, cov_type="HC0")
+    n, k = X.shape
+    expected = hc0.bse["proxy"] * np.sqrt(n / (n - k))
+    assert got["n"] == n
+    np.testing.assert_allclose(got["se_proxy"], expected, rtol=1e-8)

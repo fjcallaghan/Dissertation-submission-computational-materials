@@ -1,12 +1,12 @@
 """Collapse the 8-hourly funding series to a daily frequency.
 
 The aggregation choice matters and is configurable (``funding.daily_aggregation``):
-  * "sum"  — total funding paid over the day (3 settlements); the natural
-             "daily cost of a short" quantity used for the analysis dataset.
+  * "sum"  — daily funding-rate sum (normally 3 settlements). Positive rates
+             are receipts to shorts; cash flows also depend on position notional.
   * "mean" — average per-8h rate; keeps the series on the native per-interval
              scale that the exchange caps and that the overlay figure uses.
-  * "none" — keep the 8-hourly granularity (handled by the caller, which aligns
-             price forward instead).
+
+Keeping eight-hourly observations is not supported by the daily pipeline.
 
 We always return both sum and mean so downstream code can pick the correct
 scale without re-aggregating; ``funding_daily`` mirrors the configured choice.

@@ -109,7 +109,7 @@ def main(argv: list[str] | None = None) -> int:
 
     written = [p1.name, p2.name]
 
-    # Figure 3 — direct short-cost proxy (borrow rate), 2016+ (covers 2017 too).
+    # Figure 3 — executed lending-rate proxy, 2016+ (covers 2017 too).
     if cfg.borrow_enabled:
         borrow = datasets.load_processed(cfg, "bitfinex_borrow_clean.parquet", required=False)
         b_rate_col = "borrow_rate_clean"
